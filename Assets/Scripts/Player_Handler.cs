@@ -8,6 +8,8 @@ public class Player_Handler : MonoBehaviour
     [SerializeField] GameObject Gal;
     [SerializeField] Rigidbody2D CoupleRB;
     [SerializeField] float MoveSpeed = 0;
+    [SerializeField] SpriteRenderer CoupleSPrite;
+    [SerializeField] Animator AnimatorCouple;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,11 +21,19 @@ public class Player_Handler : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftArrow))
         {
+            AnimatorCouple.SetBool("Moving", true);
             MoveCouple(true);
+            CoupleSPrite.flipX = true;
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
+            AnimatorCouple.SetBool("Moving", true);
             MoveCouple(false);
+            CoupleSPrite.flipX = false;
+        }
+        else if (!(Input.GetKey(KeyCode.LeftArrow) ||Input.GetKey(KeyCode.RightArrow)))
+        {
+            AnimatorCouple.SetBool("Moving", false);
         }
 
         if(Input.GetKey(KeyCode.LeftShift))
