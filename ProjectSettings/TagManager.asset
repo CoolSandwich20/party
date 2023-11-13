@@ -44,3 +44,9 @@ TagManager:
   - name: RocketVFX
     uniqueID: 1348113807
     locked: 0
+  - name: SmokeVFX
+    uniqueID: 3663805649
+    locked: 0
+  - name: ShotVFX
+    uniqueID: 666934903
+    locked: 0
