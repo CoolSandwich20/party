@@ -20,6 +20,9 @@ public class RocketLauncher : MonoBehaviour
         if (LastLaunch + CoolDown < Time.time)
         {
             RocketPull[0].gameObject.SetActive(true);
+            RocketPull[0].rb.bodyType = RigidbodyType2D.Dynamic;
+            RocketPull[0].gameObject.transform.position = transform.position;
+            RocketPull[0].OnEnable();
             RocketPull.RemoveAt(0);
             LastLaunch = Time.time;
         }

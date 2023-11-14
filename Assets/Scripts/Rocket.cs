@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Rocket : MonoBehaviour
 {
-    [SerializeField] Rigidbody2D rb;
+    [SerializeField] public Rigidbody2D rb;
     [SerializeField] float force;
     [SerializeField] RocketLauncher launcher;
-    void OnEnable()
+    public void OnEnable()
     {
         transform.localPosition = Vector3.zero;
         force = Random.Range(1f, 5f);
@@ -18,9 +18,10 @@ public class Rocket : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (rb.bodyType == RigidbodyType2D.Static) { return; }
         if (transform.position.y < 9 - (force / 4f * 5f) + 0.75f)
         {
-            gameObject.SetActive(false);
+            rb.bodyType = RigidbodyType2D.Static;
             launcher.RocketPull.Add(this);
         }
     }
