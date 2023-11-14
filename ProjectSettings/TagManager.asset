@@ -50,3 +50,6 @@ TagManager:
   - name: ShotVFX
     uniqueID: 666934903
     locked: 0
+  - name: ExplosionVFX
+    uniqueID: 1278776909
+    locked: 0
