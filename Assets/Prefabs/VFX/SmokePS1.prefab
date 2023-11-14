@@ -4858,7 +4858,7 @@ GameObject:
   - component: {fileID: 4403269012496459749}
   - component: {fileID: 5125106170351535822}
   m_Layer: 0
-  m_Name: SmokePS
+  m_Name: SmokePS1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
